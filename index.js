@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded ( { extended: false } ));
 
-app.use('/', (req, res) => {
+app.get('/', (req, res) => {
   models.Flat.findAll().then(flats => {
     res.json(flats);
   });
